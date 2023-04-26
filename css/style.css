@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:wght@700&display=swap');
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: #FF8C32;
+  border-radius: 5rem;
+}
+
+.heading {
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 3.5rem;
+  color: #193A6A;
+}
+.heading span {
+  color: #FF8C32;
+}
+
+section {
+  padding: 2rem 6%;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2.8rem;
+  border-radius: 5rem;
+  border-top-left-radius: 0;
+  cursor: pointer;
+  background: none;
+  color: white;
+  font-size: 1.7rem;
+  overflow: hidden;
+  z-index: 0;
+  border: 0.2rem solid #FF8C32;
+  position: relative;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #FF8C32;
+  z-index: -1;
+  transition: 0.2s linear;
+  -webkit-clip-path: circle(0% at 0% 5%);
+          clip-path: circle(0% at 0% 5%);
+}
+.btn:hover::before {
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+}
+.btn:hover {
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+.header {
+  background: #192A6D;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header.active {
+  transform: translateY(0rem);
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: #193A6A;
+  font-weight: bolder;
+}
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.7rem;
+  color: #fff;
+  text-decoration: none;
+}
+.header .navbar a:hover {
+  color: #FF8C32;
+}
+.header .icons a,
+.header .icons div{
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+  color: #193A6A;
+  cursor: pointer;
+}
+.header .icons a:hover,
+.header .icons div:hover {
+  color: #FF8C32;
+}
+
+.header .logout-form {
+  position: absolute;
+  top: 15%;
+  right: 2rem;
+  width: 20rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: none;
+}
+.header .login-form {
+  position: absolute;
+  top: 15%;
+  right: 2rem;
+  width: 35rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: none;
+}
+.header .login-form.active {
+  display: block;
+  animation: fadeIn 0.4s linear;
+}
+.header .login-form h3 {
+  color: #193A6A;
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+.header .login-form .box {
+  width: 100%;
+  border-bottom: 0.2rem solid #193A6A;
+  border-width: 0.1rem;
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
+  color: #193A6A;
+  text-transform: none;
+  margin: 1rem 0;
+}
+.header .register-form {
+  position: absolute;
+  top: 15%;
+  right: 2rem;
+  width: 35rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: none;
+}
+.header .register-form.active {
+  display: block;
+  animation: fadeIn 0.4s linear;
+}
+.header .register-form h3 {
+  color: #193A6A;
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+.header .logout-form h3 {
+  color: #193A6A;
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+.header .register-form .box {
+  width: 100%;
+  border-bottom: 0.2rem solid #193A6A;
+  border-width: 0.1rem;
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
+  color: #193A6A;
+  text-transform: none;
+  margin: 1rem 0;
+}
+.header .login-form .remember {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+.header .login-form .remember label {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+.header .login-form .btn {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: white;
+  background-color: #FF8C32;
+}
+.header .login-form .btn:hover {
+  background-color: #FF8C32;
+}
+.header .login-form .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.header .logout-form .links {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.header .logout-form .links a, 
+.header .logout-form .links div {
+  font-size: 1.4rem;
+  color: #FF8C32;
+}
+.header .login-form .links a, 
+.header .login-form .links div {
+  font-size: 1.4rem;
+  color: #FF8C32;
+}
+.header .login-form .links a:hover,
+.header .login-form .links div:hover {
+  color: #FF8C32;
+  text-decoration: underline;
+}
+.header .register-form .btn {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.header .register-form .btn:hover {
+  background-color: #FF8C32;
+}
+.header .register-form .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.header .register-form .links a, 
+.header .register-form .links div {
+  font-size: 1.4rem;
+  color: #FF8C32;
+}
+.header .register-form .links a:hover,
+.header .register-form .links div:hover {
+  color: #193A6A;
+  text-decoration: underline;
+}
+.home .home-wrapper .swiper-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+.banner .row .button-banner{
+  width: 200px;
+  background-color: #FF8C32;
+  font-size: 2rem;
+  color: #fff;
+  padding: 15px 0px;
+  border: none;
+  position: relative;
+  top: 40rem;
+  left: 8rem;
+  border-radius: 10px;
+}
+.promo .row .button-promo{
+  width: 200px;
+  background-color: #FF8C32;
+  font-size: 2rem;
+  color: #fff;
+  padding: 15px 0px;
+  border: none;
+  position: relative;
+  top: 35rem;
+  left: 10rem;
+  border-radius: 10px;
+}
+.banner .row .text-banner{
+  position: relative;
+  top: 20rem;
+  left: 11rem;
+}
+
